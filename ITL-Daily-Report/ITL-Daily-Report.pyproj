@@ -38,6 +38,9 @@
     <Compile Include="ITL_Daily_Report\wsgi.py" />
     <Compile Include="user\admin.py" />
     <Compile Include="user\apps.py" />
+    <Compile Include="user\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="user\migrations\__init__.py" />
     <Compile Include="user\models.py" />
     <Compile Include="user\tests.py" />

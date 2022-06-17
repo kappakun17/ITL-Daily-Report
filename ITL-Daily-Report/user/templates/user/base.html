@@ -2,8 +2,15 @@
 <head><title></title></head>
 
 <body>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
 
-{{ test }}
+        {% if message %}
+            {{message}}
+        {% endif %}
 
+        <button type="submit" name="submit">Sign In</button>
+    </form>
 </body>
 </html>
