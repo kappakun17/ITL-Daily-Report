@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html> 
+<html lang="ja"> 
+<head> 
+
+    <meta charset="utf-8"> 
+
+    <title>8-7 回転</title> 
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+
+    <!--=============レイアウトを制御する独自のCSSを読み込み===============--> 
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/please_wait.css' %}"> 
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="8-7.css"> 
+    -->
+</head> 
+
+ 
+
+<body> 
+    <div class="wrapper"> 
+        <p class="rollAnime"> Notified to administrator</p> 
+        <p class="rollAnime">Please wait for a while♪</p> 
+        <!--/wrapper--> 
+    </div> 
+
+ 
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> 
+    <script src="Script1.js"></script> 
+
+    <div> 
+        <p class="img_center"> 
+            <img src="Simauma.png"> 
+        </p> 
+    </div> 
+
+    <div> 
+        <p class="img_center"> 
+
+            <img src="Microsoft-logo_rgb_c-gray.png" /> 
+        </p> 
+     </div> 
+      <p2>承認完了メールがあなたに届きましたら、ログイン可能になります。Once you receive the approval completion email, you will be able to log in.</p2> 
+</body> 
+</html> 
