@@ -4,11 +4,11 @@ from user.models import User, Staff
 # Register your models here.
 
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('id','first_name','last_name', 'email', 'is_active')
+    list_display = ('id','__str__', 'email', 'is_active')
     #list_editable = ('is_active')
 
 class StaffAdmin(admin.ModelAdmin):
-    list_display = ('id','first_name','last_name', 'email', 'is_active', 'is_staff', 'is_traineer')
+    list_display = ('id','__str__', 'email', 'is_active', 'is_traineer')
     #list_editable = ('is_active', 'is_staff', 'is_traineer')
 
 
