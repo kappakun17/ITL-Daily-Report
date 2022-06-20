@@ -1,0 +1,49 @@
+
+
+/*========= レイアウトのためのCSS ===============*/
+p {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 3.0rem;
+}
+
+/*========= くるくる回るテキスト ===============*/
+.rollAnime.roll span {
+    transition-property: opacity,transform;
+    transform: rotateY(360deg);
+    transition: all .8s cubic-bezier(.77,0,.175,1);
+    transition-timing-function: cubic-bezier(.77,0,.175,1);
+    display: inline-block;
+}
+
+/* =========背景色の指定FFE127!とBodyの大きさそろえる=========*/
+
+body {
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    background-color: #FFE127;
+}
+
+
+/* =========シマウマの画像サイズ変更=========*/
+
+p.img_center img {
+    width: 200px
+}
+
+p.rollAnime {
+}
+
+/* =========画面上部のフォント種類の変更=========*/
+
+p {
+    font-family: Arial Black;
+}
+
+/* =========画面下部のテキストを中央寄せ=========*/
+
+p2 {
+    text-align: center;
+}
