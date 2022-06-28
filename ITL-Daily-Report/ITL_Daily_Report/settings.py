@@ -37,8 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',
     'user.apps.userConfig',
-    'home.apps.homeConfig'
+    'home.apps.homeConfig',
+    'profile.apps.profileConfig',
+    'dashboard.apps.dashboardConfig'
 ]
 
 # Middleware framework
@@ -84,6 +87,15 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'user.User'
+
+#LOGIN_URL = '/'
+#LOGIN_REDIRECT_URL = '/dashboard'
+LOGOUT_REDIRECT_URL = '/'
+
+AUTHENTICATION_BACKENDS = [ 'django.contrib.auth.backends.ModelBackend',
+                           'user.backends.EmailAuthBackend']
+
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
@@ -100,6 +112,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# Session Setting 
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_COOKIE_AGE = 1200  # 20min
+SESSION_SAVE_EVERY_REQUEST = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -118,3 +135,6 @@ STATIC_URL = '/static/'
 #   ]
 
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
