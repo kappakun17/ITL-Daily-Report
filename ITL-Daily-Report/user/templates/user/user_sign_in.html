@@ -22,41 +22,30 @@
     <!--=======入力フォーム =======--> 
     <div box="center_BOX">
         <form action="#" method="post"> 
-
-                    <p class="img_center"> 
-
-                        アカウント（e-mail address)：<br> 
-
-                        <input type="text" name="name" size="12" class="hoge"> 
-
-                    </p> 
-
-                    <p class="img_center"> 
-
-                        パスワード（PassWord）：<br> 
-
-                        <input type="text" name="mail" class="hoge"> 
-
-                    </p> 
-
-                </form> 
-        <!--=======
-        <form action="#" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {{form.as_p}}
-            <button type="submit" name="submit">Sign In</button>
-        </form>
-        {% if message %}
+            <p class="img_center"> 
+                アカウント（e-mail address)：<br>
+                <input type="text" name="email" size="12" class="hoge">
+            </p> 
+
+            <p class="img_center"> 
+                パスワード（PassWord）：<br> 
+                <input type="text" name="password" class="hoge"> 
+            </p> 
+            {% if message %}
             {{message}}
-        {% endif %}
-            入力フォーム =======-->
+            {% endif %}
+            <p class="img_center"> 
+                <input type="submit" value="Sign In"> 
+            </p>
+        </form> 
     </div> 
 
     <!--=======ログインボタン======= --> 
-    <a href="/staff/sign-in" class="btn-flat-double-border">Staff Sign In</a><br> 
+    <a href="/staff/signin" class="btn-flat-double-border">Staff Sign In</a><br> 
 
     <!--=======新規アカウント登録ボタン======= --> 
-    <a href="#" class="btn-flat-double-border">Create a new account</a><<br> 
+    <a href="/signup" class="btn-flat-double-border">Create a new account</a><<br> 
 
     <!--=======パスワード再登録ボタン======= --> 
     <a href="#" class="btn-flat-double-border">Reset password</a> 

@@ -4,7 +4,7 @@
 p {
     text-align: center;
     margin: 20px 0;
-    font-size: 3.0rem;
+    font-size: 20px;
 }
 
 /*========= くるくる回るテキスト ===============*/
@@ -30,7 +30,7 @@ body {
 /* =========シマウマの画像サイズ変更=========*/
 
 p.img_center img {
-    width: 200px
+    width: 150px
 }
 
 p.rollAnime {
