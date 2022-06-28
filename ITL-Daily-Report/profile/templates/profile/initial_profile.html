@@ -1,0 +1,53 @@
+﻿{% load widget_tweaks %}
+{% load static %}
+
+
+
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>ITL生のプロフィール入力画面</title>
+    <link rel="stylesheet" href={% static 'css/pinput.css'%}>
+</head>
+<body>
+    <!-- プロフィール入力タイトル -->
+    <div class="MIDASHI">
+        <h1>PROFILE<br>INPUT</h1>
+   
+
+    <!--アイコンや画像を選ぼう-->
+    <div class="icon_ERABU">
+        <form action="" method="POST" enctype="multipart/form-data">
+        
+        </form>
+    </div>
+   
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!---
+        <input name="Things to consider&Disability" type="text" class="feedback-input" placeholder="障害と配慮事項のお願い" />
+        
+        <input name="hobby" type="text" class="feedback-input" placeholder="趣味" />
+        <textarea name="introduction" class="feedback-input" placeholder="自己紹介"></textarea>
+
+        <div>
+            <p>
+                <input type="file" name="user_image" accept="image/*">
+            </p>
+        </div>
+        --> 
+
+        {{form.hobby | add_class:"feedback-input" | attr:"placeholder:趣味" }}
+        {{form.introduction | add_class:"feedback-input" | attr:"placeholder:自己紹介" }}
+        <label>プロフィール画像の登録</label>
+        {{form.user_image　| add_class:"feedback-input" }}
+
+
+        <input type="submit" value="Continue" />
+    
+    </form>
+</div>
+</body>
+</html>
