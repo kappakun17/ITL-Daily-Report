@@ -31,6 +31,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="dashboard\admin.py" />
+    <Compile Include="dashboard\apps.py" />
+    <Compile Include="dashboard\migrations\__init__.py" />
+    <Compile Include="dashboard\models.py" />
+    <Compile Include="dashboard\tests.py" />
+    <Compile Include="dashboard\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dashboard\views.py" />
+    <Compile Include="dashboard\__init__.py" />
     <Compile Include="home\admin.py" />
     <Compile Include="home\apps.py" />
     <Compile Include="home\migrations\__init__.py" />
@@ -46,8 +56,24 @@
     <Compile Include="ITL_Daily_Report\settings.py" />
     <Compile Include="ITL_Daily_Report\urls.py" />
     <Compile Include="ITL_Daily_Report\wsgi.py" />
+    <Compile Include="profile\admin.py" />
+    <Compile Include="profile\apps.py" />
+    <Compile Include="profile\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="profile\migrations\__init__.py" />
+    <Compile Include="profile\models.py" />
+    <Compile Include="profile\tests.py" />
+    <Compile Include="profile\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="profile\views.py" />
+    <Compile Include="profile\__init__.py" />
     <Compile Include="user\admin.py" />
     <Compile Include="user\apps.py" />
+    <Compile Include="user\backends.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="user\forms.py">
       <SubType>Code</SubType>
     </Compile>
@@ -61,20 +87,35 @@
     <Compile Include="user\__init__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="dashboard\templates\dashboard\index.html" />
     <Content Include="home\templates\home\index.html" />
+    <Content Include="profile\static\css\pinput.css" />
+    <Content Include="profile\templates\profile\base.html" />
+    <Content Include="profile\templates\profile\initial_profile.html" />
     <Content Include="requirements.txt" />
     <Content Include="home\static\css\cover.css" />
     <Content Include="user\static\css\please_wait.css" />
+    <Content Include="user\static\css\staff_signin.css" />
     <Content Include="user\static\css\user_sign_in.css" />
+    <Content Include="user\static\image\Microsoft-logo_rgb_c-gray.png" />
+    <Content Include="user\static\image\Shimauma.png" />
     <Content Include="user\static\image\UPDATE.png" />
+    <Content Include="user\static\js\please_wait.js" />
+    <Content Include="user\static\js\sign-up.js" />
     <Content Include="user\templates\user\base.html" />
+    <Content Include="user\templates\user\confirm.html" />
     <Content Include="user\templates\user\please_wait.html" />
     <Content Include="user\templates\user\staff_sign_up.html" />
+    <Content Include="user\templates\user\success.html" />
     <Content Include="user\templates\user\user_sign_in.html" />
     <Content Include="user\templates\user\staff_sign_in.html" />
     <Content Include="user\templates\user\user_sign_up.html" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="dashboard\" />
+    <Folder Include="dashboard\migrations\" />
+    <Folder Include="dashboard\templates\" />
+    <Folder Include="dashboard\templates\dashboard\" />
     <Folder Include="home\" />
     <Folder Include="home\migrations\" />
     <Folder Include="home\templates\" />
@@ -82,11 +123,18 @@
     <Folder Include="ITL_Daily_Report\" />
     <Folder Include="home\static\" />
     <Folder Include="home\static\css\" />
+    <Folder Include="profile\" />
+    <Folder Include="profile\migrations\" />
+    <Folder Include="profile\static\" />
+    <Folder Include="profile\static\css\" />
+    <Folder Include="profile\templates\" />
+    <Folder Include="profile\templates\profile\" />
     <Folder Include="user\" />
     <Folder Include="user\migrations\" />
     <Folder Include="user\static\" />
     <Folder Include="user\static\css\" />
     <Folder Include="user\static\image\" />
+    <Folder Include="user\static\js\" />
     <Folder Include="user\templates\" />
     <Folder Include="user\templates\user\" />
   </ItemGroup>
