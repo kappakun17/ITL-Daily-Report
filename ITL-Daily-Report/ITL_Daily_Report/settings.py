@@ -25,7 +25,7 @@ SECRET_KEY = '34d800f3-7537-45a9-8513-71d0bf3c1431'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['msitl22-update.azurewebsites.net']
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
