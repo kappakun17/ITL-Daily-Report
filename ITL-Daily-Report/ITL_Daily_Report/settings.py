@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'user.apps.userConfig',
     'home.apps.homeConfig',
     'profile.apps.profileConfig',
-    'dashboard.apps.dashboardConfig'
+    'dashboard.apps.dashboardConfig',
+    'schedule.apps.scheduleConfig',
+    'accountManagement.apps.accountManagementConfig',
+    'dialy.apps.dialyConfig'
 ]
 
 # Middleware framework
@@ -89,8 +92,8 @@ DATABASES = {
 
 AUTH_USER_MODEL = 'user.User'
 
-#LOGIN_URL = '/'
-#LOGIN_REDIRECT_URL = '/dashboard'
+LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = '/dashboard'
 LOGOUT_REDIRECT_URL = '/'
 
 AUTHENTICATION_BACKENDS = [ 'django.contrib.auth.backends.ModelBackend',
@@ -124,7 +127,7 @@ LANGUAGE_CODE = 'ja'
 TIME_ZONE = 'Asia/Tokyo'
 USE_I18N = True
 USE_L10N = True
-USE_TZ = True
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/

@@ -21,7 +21,7 @@
     </div> 
     <!--=======入力フォーム =======--> 
     <div box="center_BOX">
-        <form action="#" method="post"> 
+        <form action="" method="post"> 
             {% csrf_token %}
             <p class="img_center"> 
                 アカウント（e-mail address)：<br>
@@ -36,7 +36,7 @@
             {{message}}
             {% endif %}
             <p class="img_center"> 
-                <input type="submit" value="Sign In"> 
+                <input type="submit" class="input-flat-double-border "  value="Sign In" />
             </p>
         </form> 
     </div> 

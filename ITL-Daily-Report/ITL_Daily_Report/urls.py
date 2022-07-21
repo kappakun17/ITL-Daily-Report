@@ -29,7 +29,10 @@ urlpatterns = [
     path('', include('home.urls')),
     path('', include('user.urls')),
     path('', include('profile.urls')),
-    path('dashboard/', include('dashboard.urls'))
+    path('dashboard/', include('dashboard.urls')),
+    path('dashboard/', include('schedule.urls')),
+    path('dashboard/', include('accountManagement.urls')),
+    path('dashboard/', include('dialy.urls')),
 ]
 
 if settings.DEBUG:

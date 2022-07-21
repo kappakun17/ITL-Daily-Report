@@ -42,6 +42,26 @@ input.hoge {
     margin-right: auto;
 }
 
+.input-flat-double-border {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    text-align: center;
+    color: #000000;
+    border: double 4px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+    width: 310px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .input-flat-double-border:hover {
+        cursor: pointer;
+        background-color: aquamarine;
+    }
+
 
 
     .btn-flat-double-border:hover {

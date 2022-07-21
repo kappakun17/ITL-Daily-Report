@@ -106,4 +106,8 @@ class StaffInitialProfile(TemplateView):
         return redirect('/please-wait')
 
     
+class ProfileView(TemplateView):
 
+    def get(self, request):
+
+        return render(request, 'profile/profile_view.html')

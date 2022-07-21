@@ -17,5 +17,11 @@ def image_directory_path(instance, filename):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     hobby = models.CharField('hobby',max_length=250)
-    introduction = models.TextField('introduction',max_length=300)
+    introduction = models.TextField('introduction',max_length=500)
     user_image = models.ImageField(verbose_name='user_image',upload_to=image_directory_path, default='profile-images/default/user.png')
+
+    class Meta:
+        db_table = 'user_profile'
+        verbose_name = 'プロフィール'
+        verbose_name_plural = 'プロフィール群'
+

@@ -30,6 +30,11 @@
             <h2>新規ユーザー登録</h2>
       <p class="lead">下記のフォームにユーザーデータの入力をお願いします。</p>
     </div>
+    {% if message %}
+    <div class="alert alert-warning col-12" role="alert">
+        {{message}}
+    </div>
+    {% endif %}
              <!--ユーザ登録用フォーム-->
          <form action="" method="POST" enctype="multipart/form-data">
              {% csrf_token %}

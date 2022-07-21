@@ -31,6 +31,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="accountManagement\admin.py" />
+    <Compile Include="accountManagement\apps.py" />
+    <Compile Include="accountManagement\migrations\__init__.py" />
+    <Compile Include="accountManagement\models.py" />
+    <Compile Include="accountManagement\tests.py" />
+    <Compile Include="accountManagement\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="accountManagement\views.py" />
+    <Compile Include="accountManagement\__init__.py" />
     <Compile Include="dashboard\admin.py" />
     <Compile Include="dashboard\apps.py" />
     <Compile Include="dashboard\migrations\__init__.py" />
@@ -41,6 +51,22 @@
     </Compile>
     <Compile Include="dashboard\views.py" />
     <Compile Include="dashboard\__init__.py" />
+    <Compile Include="dialy\admin.py" />
+    <Compile Include="dialy\apps.py" />
+    <Compile Include="dialy\dialy.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dialy\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dialy\migrations\__init__.py" />
+    <Compile Include="dialy\models.py" />
+    <Compile Include="dialy\tests.py" />
+    <Compile Include="dialy\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dialy\views.py" />
+    <Compile Include="dialy\__init__.py" />
     <Compile Include="home\admin.py" />
     <Compile Include="home\apps.py" />
     <Compile Include="home\migrations\__init__.py" />
@@ -69,6 +95,19 @@
     </Compile>
     <Compile Include="profile\views.py" />
     <Compile Include="profile\__init__.py" />
+    <Compile Include="schedule\admin.py" />
+    <Compile Include="schedule\apps.py" />
+    <Compile Include="schedule\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="schedule\migrations\__init__.py" />
+    <Compile Include="schedule\models.py" />
+    <Compile Include="schedule\tests.py" />
+    <Compile Include="schedule\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="schedule\views.py" />
+    <Compile Include="schedule\__init__.py" />
     <Compile Include="user\admin.py" />
     <Compile Include="user\apps.py" />
     <Compile Include="user\backends.py">
@@ -87,13 +126,26 @@
     <Compile Include="user\__init__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="accountManagement\templates\accountManagement\index.html" />
+    <Content Include="dashboard\static\css\dashboard.css" />
+    <Content Include="dashboard\templates\dashboard\base.html" />
     <Content Include="dashboard\templates\dashboard\index.html" />
+    <Content Include="dialy\static\css\dialy.css" />
+    <Content Include="dialy\templates\dialy\dialy_detail.html" />
+    <Content Include="dialy\templates\dialy\dialy_views.html" />
+    <Content Include="dialy\templates\dialy\index.html" />
+    <Content Include="dialy\templates\dialy\cantAccess.html" />
     <Content Include="home\templates\home\index.html" />
     <Content Include="profile\static\css\pinput.css" />
     <Content Include="profile\templates\profile\base.html" />
     <Content Include="profile\templates\profile\initial_profile.html" />
+    <Content Include="profile\templates\profile\profile_view.html" />
     <Content Include="requirements.txt" />
     <Content Include="home\static\css\cover.css" />
+    <Content Include="schedule\static\js\app.js" />
+    <Content Include="schedule\templates\schedule\base.html" />
+    <Content Include="schedule\templates\schedule\schedule_bar.html" />
+    <Content Include="schedule\templates\schedule\staff_schedule.html" />
     <Content Include="user\static\css\please_wait.css" />
     <Content Include="user\static\css\staff_signin.css" />
     <Content Include="user\static\css\user_sign_in.css" />
@@ -112,10 +164,22 @@
     <Content Include="user\templates\user\user_sign_up.html" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="accountManagement\" />
+    <Folder Include="accountManagement\migrations\" />
+    <Folder Include="accountManagement\templates\" />
+    <Folder Include="accountManagement\templates\accountManagement\" />
     <Folder Include="dashboard\" />
     <Folder Include="dashboard\migrations\" />
+    <Folder Include="dashboard\static\" />
+    <Folder Include="dashboard\static\css\" />
     <Folder Include="dashboard\templates\" />
     <Folder Include="dashboard\templates\dashboard\" />
+    <Folder Include="dialy\" />
+    <Folder Include="dialy\migrations\" />
+    <Folder Include="dialy\static\" />
+    <Folder Include="dialy\static\css\" />
+    <Folder Include="dialy\templates\" />
+    <Folder Include="dialy\templates\dialy\" />
     <Folder Include="home\" />
     <Folder Include="home\migrations\" />
     <Folder Include="home\templates\" />
@@ -129,6 +193,12 @@
     <Folder Include="profile\static\css\" />
     <Folder Include="profile\templates\" />
     <Folder Include="profile\templates\profile\" />
+    <Folder Include="schedule\" />
+    <Folder Include="schedule\migrations\" />
+    <Folder Include="schedule\static\" />
+    <Folder Include="schedule\static\js\" />
+    <Folder Include="schedule\templates\" />
+    <Folder Include="schedule\templates\schedule\" />
     <Folder Include="user\" />
     <Folder Include="user\migrations\" />
     <Folder Include="user\static\" />
