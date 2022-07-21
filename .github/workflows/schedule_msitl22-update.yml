@@ -29,8 +29,8 @@ jobs:
       
       - name: Install dependencies
         run: |
-          git clone https://github.com/kappakun17/ITL-Daily-Report.git
-          cd ITL-Daily-Report/blob/schedule/ITL-Daily-Report/
+          ls
+          cd ITL-Daily-Report
           pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
