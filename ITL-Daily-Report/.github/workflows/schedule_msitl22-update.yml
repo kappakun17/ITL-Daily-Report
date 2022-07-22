@@ -28,9 +28,7 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-        run: |
-          cd ITL-Daily-Report
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
@@ -62,4 +60,4 @@ jobs:
         with:
           app-name: 'msitl22-update'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5020BA127F2744DF862514D70F523615 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0F22F07973B3471CB3D426B3FA5CAB96 }}
