@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
-from .forms import UserProfileForm
+from .forms import UserProfileForm, UploadImageForm, UserProfileAllForm
 from .models import Profile
 from user.models import User
 from django.http import Http404
@@ -108,6 +108,27 @@ class StaffInitialProfile(TemplateView):
     
 class ProfileView(TemplateView):
 
+    def __init__(self):
+        self.params = {}
+
     def get(self, request):
 
-        return render(request, 'profile/profile_view.html')
+        form = UploadImageForm(None)
+        self.params['form'] = form
+
+        return render(request, 'profile/profile_view.html', self.params)
+
+    def post(self, request):
+
+        profile = Profile.objects.get(user=self.request.user)
+        print(profile.user)
+        form = UserProfileAllForm(request.FILES, instance=profile)
+
+        print(form)
+       
+        if not form.is_valid():
+            print('error')
+            return Http404()
+
+        form.save()
+        return redirect('/dashboard/user/profile')

@@ -1,4 +1,5 @@
 {% extends 'dashboard/base.html'%}
+{% load widget_tweaks %}
 {% load static %}
 
 {% block content %}
@@ -13,7 +14,15 @@
 
             <div class="d-flex justify-content-center flex-column">
                 <img src='/media/{{user.profile.user_image}}' class="rounded-circle bg-warning mb-3 border border-white border-3" width="140" height="140"/>
-                <button class="btn btn-success">画像編集</button>
+                <button class="btn btn-success" onclick="displayForm()">画像編集</button>
+            </div>
+            <div id="divForm" class="d-none">
+                <form action="" method="POST" enctype="multipart/form-data" class="input-group mt-3">
+                    {% csrf_token %}
+                    {{form.user_image　| add_class:"form-control" }}
+                    <button id="inputGroupBtn" class="input-group-text btn btn-success">更新</button>
+
+                </form>
             </div>
             <div class="bg-white rounded col-7 d-flex justify-content-start p-3 flex-column mb-4 mt-4">
                 <div class="col-12 justify-content-center">
@@ -27,4 +36,21 @@
     </div>
 
 </div>
+
+<script>
+
+    function displayForm() {
+
+        divForm = document.getElementById('divForm')
+
+        if (divForm.classList.contains('d-none')){
+            divForm.classList.add('d-block')
+            divForm.classList.remove('d-none')
+        } else {
+            divForm.classList.add('d-none')
+            divForm.classList.remove('d-block')
+        }
+    }
+
+</script >
 {% endblock %}
