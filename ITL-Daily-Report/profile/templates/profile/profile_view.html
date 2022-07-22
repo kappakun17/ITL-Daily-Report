@@ -1,0 +1,56 @@
+{% extends 'dashboard/base.html'%}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    
+    <div class="row gx-1 d-flex justify-content-center flex-column mb-5">
+        <div class="card card-raised col p-2 bg-secondary text-white">
+            <h4 class="p-2">Profile</h4>
+        </div>
+        <div class="d-flex justify-content-center align-items-center flex-column p-3 mt-1 rounded-5" style="background-color:gainsboro">
+
+            <div class="d-flex justify-content-center flex-column">
+                <img src='/media/{{user.profile.user_image}}' class="rounded-circle bg-warning mb-3 border border-white border-3" width="140" height="140"/>
+                <button class="btn btn-success" onclick="displayForm()">画像編集</button>
+            </div>
+            <div id="divForm" class="d-none">
+                <form action="" method="POST" enctype="multipart/form-data" class="input-group mt-3">
+                    {% csrf_token %}
+                    {{form.user_image　| add_class:"form-control" }}
+                    <button id="inputGroupBtn" class="input-group-text btn btn-success">更新</button>
+
+                </form>
+            </div>
+            <div class="bg-white rounded col-7 d-flex justify-content-start p-3 flex-column mb-4 mt-4">
+                <div class="col-12 justify-content-center">
+                    <label class=" mb-4 col-5 text-center bg-warning text-white rounded-pill">Informaiton</label>
+                </div>
+                <p><i class="bi bi-person-fill"></i>  {{user}}</p>
+                <p><i class="bi bi-envelope-fill"></i>  {{user.email}}</p>
+                <p><i class="bi bi-people-fill "></i>  {{user.user_group.group}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+    function displayForm() {
+
+        divForm = document.getElementById('divForm')
+
+        if (divForm.classList.contains('d-none')){
+            divForm.classList.add('d-block')
+            divForm.classList.remove('d-none')
+        } else {
+            divForm.classList.add('d-none')
+            divForm.classList.remove('d-block')
+        }
+    }
+
+</script >
+{% endblock %}

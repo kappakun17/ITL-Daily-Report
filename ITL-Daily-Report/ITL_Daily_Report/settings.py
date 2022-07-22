@@ -25,7 +25,10 @@ SECRET_KEY = '34d800f3-7537-45a9-8513-71d0bf3c1431'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost', 
+    'msitl22-update-apps.azurewebsites.net',
+    'msilt22-update.azurewebsites.net']
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
@@ -41,13 +44,17 @@ INSTALLED_APPS = [
     'user.apps.userConfig',
     'home.apps.homeConfig',
     'profile.apps.profileConfig',
-    'dashboard.apps.dashboardConfig'
+    'dashboard.apps.dashboardConfig',
+    'schedule.apps.scheduleConfig',
+    'accountManagement.apps.accountManagementConfig',
+    'dialy.apps.dialyConfig'
 ]
 
 # Middleware framework
 # https://docs.djangoproject.com/en/2.1/topics/http/middleware/
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -89,8 +96,8 @@ DATABASES = {
 
 AUTH_USER_MODEL = 'user.User'
 
-#LOGIN_URL = '/'
-#LOGIN_REDIRECT_URL = '/dashboard'
+LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = '/dashboard'
 LOGOUT_REDIRECT_URL = '/'
 
 AUTHENTICATION_BACKENDS = [ 'django.contrib.auth.backends.ModelBackend',
@@ -124,17 +131,21 @@ LANGUAGE_CODE = 'ja'
 TIME_ZONE = 'Asia/Tokyo'
 USE_I18N = True
 USE_L10N = True
-USE_TZ = True
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
 
-#STATICFILES_DIRS = [
-#    os.path.join(BASE_DIR, 'static')
-#   ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+   ]
+ 
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

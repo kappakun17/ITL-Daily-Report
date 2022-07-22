@@ -50,6 +50,20 @@ class UserSignIn(TemplateView):
         email = request.POST['email']
         password = request.POST['password']
 
+        if email == '' and password == '':
+            self.params['message'] = 'アカウントと、パスワードを入力してください。'
+            return render(request, userView['signIn'], self.params)
+
+
+
+        is_user = User.objects.get_or_none(email=email)
+
+        print(is_user)
+
+        if not is_user:
+            self.params['message'] = 'メールアドレス化パスワードが間違っています。'
+            return render(request, userView['signIn'], self.params)
+
         user = authenticate(request, email = email, password = password)
         if user is not None:
             login(request, user)
