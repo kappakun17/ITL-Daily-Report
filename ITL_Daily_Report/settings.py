@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost', 
     'msitl22-update-apps.azurewebsites.net',
-    'msilt22-update.azurewebsites.net']
+    'msitl22-update.azurewebsites.net']
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
