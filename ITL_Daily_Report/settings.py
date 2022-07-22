@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '34d800f3-7537-45a9-8513-71d0bf3c1431'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost', 
@@ -70,7 +70,7 @@ ROOT_URLCONF = 'ITL_Daily_Report.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,18 +135,15 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
+
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
 STATIC_URL = '/static/'
-
-if DEBUG:
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'static')
-       ]
- 
-STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
-
-
+STATICFILES_DIRS = ([os.path.join(BASE_DIR, 'static'),])
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

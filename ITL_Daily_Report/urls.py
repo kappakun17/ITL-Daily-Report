@@ -33,4 +33,7 @@ urlpatterns = [
     path('dashboard/', include('schedule.urls')),
     path('dashboard/', include('accountManagement.urls')),
     path('dashboard/', include('dialy.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.MEDIA_URL, document_root=settings.STATICFILES_DIRS)
+    ]
+
+#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
