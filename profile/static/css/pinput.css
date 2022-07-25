@@ -4,7 +4,6 @@
 body {
     /* �E�΂� */
     background-color: #FFE127;
-    background-image: repeating-linear-gradient(-45deg, #fff, #fff 7px, transparent 0, transparent 14px);
 }
 
 /*���̓t�H�[���̃u���b�N�傫����*/
@@ -37,8 +36,8 @@ form {
     font-size: 18px;
     border-radius: 5px;
     line-height: 22px;
-    background-color: transparent;
-    border: 2px solid #CC6666;
+    background-color: white;
+    border: 2px solid #808080;
     transition: all 0.3s;
     padding: 13px;
     margin-bottom: 15px;
@@ -48,7 +47,7 @@ form {
 }
 
     .feedback-input:focus {
-        border: 2px solid #CC4949;
+        border: 2px solid #000000;
     }
 
 textarea.feedback-input {
@@ -61,7 +60,7 @@ textarea.feedback-input {
 [type="submit"] {
     font-family: Broadway;
     width: 100%;
-    background: #CC6666;
+    background: #199c12;
     border-radius: 5px;
     border: 0;
     cursor: pointer;
@@ -75,5 +74,5 @@ textarea.feedback-input {
 }
 
     [type="submit"]:hover {
-        background: #9adce7;
+        background: #28d119;
     }
