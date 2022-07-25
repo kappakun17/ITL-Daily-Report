@@ -22,7 +22,7 @@
                     <p class="text-secondary">{{today_schedule.traineer_memo}}</p>
 
                     <div class="col-12 d-flex justify-content-center">
-                        <button type="button" class="btn btn-success col-10">今日の日報を書く</button>
+                        <button type="button" class="btn btn-success col-10" onclick="local-href='/dashboard/user/dialy/edit/{{today_schedule.id}}'">今日の日報を書く</button>
                     </div>
                 </div>
                 {% else %}

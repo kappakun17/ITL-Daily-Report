@@ -82,6 +82,7 @@ class UserDashboard(LoginRequiredMixin,TemplateView):
 
             else:
                 self.params['today_schedule'] = {
+                    'id':todaySchedule.id,
                     'title':todaySchedule.training.title,
                     'description':todaySchedule.training.description,
                     'staff_memo':todaySchedule.staff_memo,

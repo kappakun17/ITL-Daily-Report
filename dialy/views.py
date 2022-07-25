@@ -123,7 +123,7 @@ class UserDialyDetail(LoginRequiredMixin,TemplateView):
 
        schedule_date = {}
 
-       locale.setlocale(locale.LC_CTYPE, "Japanese_Japan.932")
+       locale.setlocale(locale.LC_CTYPE, 'Japanese_Japan.UTF-8')
        schedule_date['str_date'] = schedule_data.start_time.strftime('%Y年%m月%d日')
        schedule_date['str_start'] = schedule_data.start_time.strftime('%H:%M')
        schedule_date['str_end'] = schedule_data.end_time.strftime('%H:%M')
