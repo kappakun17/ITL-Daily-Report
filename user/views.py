@@ -64,9 +64,16 @@ class UserSignIn(TemplateView):
             self.params['message'] = 'メールアドレス化パスワードが間違っています。'
             return render(request, userView['signIn'], self.params)
 
+
+        # ユーザーの認証（メールアドレスとパスワードの一致が必要）
         user = authenticate(request, email = email, password = password)
+        
+        # 認証できた場合
         if user is not None:
+            
+            # ユーザーのログイン（ユーザー情報を保存してくれる）
             login(request, user)
+            
             if not user.is_activated:
                 return redirect('/please-wait')
             return redirect('/dashboard/user')

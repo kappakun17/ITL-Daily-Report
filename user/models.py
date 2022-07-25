@@ -10,6 +10,7 @@ from django.utils import timezone
 
 
 class UserManager(BaseUserManager):
+    # 各ユーザーのアカウント登録を処理
     def _create_user(self, first_name, last_name, email, password, **extra_fields):
         if not email:
             raise ValueError('Emailを入力してください')
@@ -19,16 +20,19 @@ class UserManager(BaseUserManager):
         user.save(using=self.db)
         return user
 
+    # ITL生徒が登録するとき
     def create_user(self,first_name, last_name, email, password, **extra_fields):
         extra_fields.setdefault('is_staff', False)
         extra_fields.setdefault('is_traineer', False)
         return self._create_user(first_name, last_name, email, password)
 
+    # スタッフが登録するとき
     def create_staff(self, first_name, last_name, email, password, **extra_fields):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_traineer', False)
         return self._create_user(first_name, last_name, email, password)
     
+    # 講師が登録するとき
     def create_traineer(self, first_name, last_name, email, password, **extra_fields):
         extra_fields.setdefault('is_staff', False)
         extra_fields.setdefault('is_traineer', True)
