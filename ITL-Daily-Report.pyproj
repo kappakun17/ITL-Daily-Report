@@ -1,0 +1,262 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>ITL-Daily-Report</Name>
+    <RootNamespace>ITL-Daily-Report</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>unittest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>df50d740-878b-45b5-be8f-62115eb5cf76</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>ITL_Daily_Report.settings</DjangoSettingsModule>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="accountManagement\admin.py" />
+    <Compile Include="accountManagement\apps.py" />
+    <Compile Include="accountManagement\migrations\__init__.py" />
+    <Compile Include="accountManagement\models.py" />
+    <Compile Include="accountManagement\tests.py" />
+    <Compile Include="accountManagement\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="accountManagement\views.py" />
+    <Compile Include="accountManagement\__init__.py" />
+    <Compile Include="dashboard\admin.py" />
+    <Compile Include="dashboard\apps.py" />
+    <Compile Include="dashboard\migrations\__init__.py" />
+    <Compile Include="dashboard\models.py" />
+    <Compile Include="dashboard\tests.py" />
+    <Compile Include="dashboard\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dashboard\views.py" />
+    <Compile Include="dashboard\__init__.py" />
+    <Compile Include="dialy\admin.py" />
+    <Compile Include="dialy\apps.py" />
+    <Compile Include="dialy\dialy.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dialy\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dialy\migrations\__init__.py" />
+    <Compile Include="dialy\models.py" />
+    <Compile Include="dialy\tests.py" />
+    <Compile Include="dialy\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dialy\views.py" />
+    <Compile Include="dialy\__init__.py" />
+    <Compile Include="home\admin.py" />
+    <Compile Include="home\apps.py" />
+    <Compile Include="home\migrations\__init__.py" />
+    <Compile Include="home\models.py" />
+    <Compile Include="home\tests.py" />
+    <Compile Include="home\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="home\views.py" />
+    <Compile Include="home\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="ITL_Daily_Report\__init__.py" />
+    <Compile Include="ITL_Daily_Report\settings.py" />
+    <Compile Include="ITL_Daily_Report\urls.py" />
+    <Compile Include="ITL_Daily_Report\wsgi.py" />
+    <Compile Include="profile\admin.py" />
+    <Compile Include="profile\apps.py" />
+    <Compile Include="profile\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="profile\migrations\__init__.py" />
+    <Compile Include="profile\models.py" />
+    <Compile Include="profile\tests.py" />
+    <Compile Include="profile\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="profile\views.py" />
+    <Compile Include="profile\__init__.py" />
+    <Compile Include="schedule\admin.py" />
+    <Compile Include="schedule\apps.py" />
+    <Compile Include="schedule\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="schedule\migrations\__init__.py" />
+    <Compile Include="schedule\models.py" />
+    <Compile Include="schedule\tests.py" />
+    <Compile Include="schedule\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="schedule\views.py" />
+    <Compile Include="schedule\__init__.py" />
+    <Compile Include="user\admin.py" />
+    <Compile Include="user\apps.py" />
+    <Compile Include="user\backends.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="user\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="user\migrations\__init__.py" />
+    <Compile Include="user\models.py" />
+    <Compile Include="user\tests.py" />
+    <Compile Include="user\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="user\views.py" />
+    <Compile Include="user\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="accountManagement\templates\accountManagement\index.html" />
+    <Content Include="dashboard\static\css\dashboard.css" />
+    <Content Include="dashboard\templates\dashboard\base.html" />
+    <Content Include="dashboard\templates\dashboard\index.html" />
+    <Content Include="dialy\static\css\dialy.css" />
+    <Content Include="dialy\templates\dialy\dialy_detail.html" />
+    <Content Include="dialy\templates\dialy\dialy_views.html" />
+    <Content Include="dialy\templates\dialy\index.html" />
+    <Content Include="dialy\templates\dialy\cantAccess.html" />
+    <Content Include="home\templates\home\index.html" />
+    <Content Include="profile\static\css\pinput.css" />
+    <Content Include="profile\templates\profile\base.html" />
+    <Content Include="profile\templates\profile\initial_profile.html" />
+    <Content Include="profile\templates\profile\profile_view.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="home\static\css\cover.css" />
+    <Content Include="schedule\static\js\app.js" />
+    <Content Include="schedule\templates\schedule\base.html" />
+    <Content Include="schedule\templates\schedule\schedule_bar.html" />
+    <Content Include="schedule\templates\schedule\staff_schedule.html" />
+    <Content Include="user\static\css\please_wait.css" />
+    <Content Include="user\static\css\staff_signin.css" />
+    <Content Include="user\static\css\user_sign_in.css" />
+    <Content Include="user\static\image\Microsoft-logo_rgb_c-gray.png" />
+    <Content Include="user\static\image\Shimauma.png" />
+    <Content Include="user\static\image\UPDATE.png" />
+    <Content Include="user\static\js\please_wait.js" />
+    <Content Include="user\static\js\sign-up.js" />
+    <Content Include="user\templates\user\base.html" />
+    <Content Include="user\templates\user\confirm.html" />
+    <Content Include="user\templates\user\please_wait.html" />
+    <Content Include="user\templates\user\staff_sign_up.html" />
+    <Content Include="user\templates\user\success.html" />
+    <Content Include="user\templates\user\user_sign_in.html" />
+    <Content Include="user\templates\user\staff_sign_in.html" />
+    <Content Include="user\templates\user\user_sign_up.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="accountManagement\" />
+    <Folder Include="accountManagement\migrations\" />
+    <Folder Include="accountManagement\templates\" />
+    <Folder Include="accountManagement\templates\accountManagement\" />
+    <Folder Include="dashboard\" />
+    <Folder Include="dashboard\migrations\" />
+    <Folder Include="dashboard\static\" />
+    <Folder Include="dashboard\static\css\" />
+    <Folder Include="dashboard\templates\" />
+    <Folder Include="dashboard\templates\dashboard\" />
+    <Folder Include="dialy\" />
+    <Folder Include="dialy\migrations\" />
+    <Folder Include="dialy\static\" />
+    <Folder Include="dialy\static\css\" />
+    <Folder Include="dialy\templates\" />
+    <Folder Include="dialy\templates\dialy\" />
+    <Folder Include="home\" />
+    <Folder Include="home\migrations\" />
+    <Folder Include="home\templates\" />
+    <Folder Include="home\templates\home\" />
+    <Folder Include="ITL_Daily_Report\" />
+    <Folder Include="home\static\" />
+    <Folder Include="home\static\css\" />
+    <Folder Include="profile\" />
+    <Folder Include="profile\migrations\" />
+    <Folder Include="profile\static\" />
+    <Folder Include="profile\static\css\" />
+    <Folder Include="profile\templates\" />
+    <Folder Include="profile\templates\profile\" />
+    <Folder Include="schedule\" />
+    <Folder Include="schedule\migrations\" />
+    <Folder Include="schedule\static\" />
+    <Folder Include="schedule\static\js\" />
+    <Folder Include="schedule\templates\" />
+    <Folder Include="schedule\templates\schedule\" />
+    <Folder Include="user\" />
+    <Folder Include="user\migrations\" />
+    <Folder Include="user\static\" />
+    <Folder Include="user\static\css\" />
+    <Folder Include="user\static\image\" />
+    <Folder Include="user\static\js\" />
+    <Folder Include="user\templates\" />
+    <Folder Include="user\templates\user\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.7</Version>
+      <Description>env (Python 3.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

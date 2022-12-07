@@ -1,0 +1,129 @@
+﻿{% extends 'dashboard/base.html'%}
+
+{% block content %}
+<div class="d-flex flex-wrap p-3">
+    <div class="p-4 col-9">
+    
+        <div class="row gx-1 d-flex justify-content-center flex-column mb-3">
+            <div class="card card-raised col p-2 bg-secondary text-white">
+                <h4 class="p-2">今日の予定</h4>
+            </div>
+            <div class="col d-flex justify-content-start flex-wrap mt-1 p-4 text-white rounded-3" style="background-color:gainsboro">
+                <div class="col-2 me-3 d-flex flex-column justify-content-center align-items-center bg-secondary p-2 rounded">
+                    <span class="mt-2 fst-normal" style="font-size:20px">{{today_info.month}}</span>
+                    <span class="fw-bolder" style="font-size:70px">{{today_info.day}}</span>
+                    <span class="mb-2 bg-white rounded-pill col-12 fst-bold text-center text-secondary" style="font-size:20px">{{today_info.year}}</span>
+                </div>
+                {% if today_schedule.title is not None %}
+                <div class="col-8 d-flex flex-column justify-content-start align-items-start p-4 bg-white rounded">
+                    <p class="text-secondary" style="font-size:30px">{{today_schedule.title}}</p>
+                    <p class="text-secondary">{{today_schedule.description}}</p>
+                    <p class="text-secondary">{{today_schedule.staff_memo}}</p>
+                    <p class="text-secondary">{{today_schedule.traineer_memo}}</p>
+
+                    <div class="col-12 d-flex justify-content-center">
+                        <button type="button" class="btn btn-success col-10" onclick="local-href='/dashboard/user/dialy/edit/{{today_schedule.id}}'">今日の日報を書く</button>
+                    </div>
+                </div>
+                {% else %}
+                <div class="col-8 d-flex flex-column justify-content-start align-items-start p-4 bg-white rounded">
+                    <p class="text-secondary" style="font-size:30px">今日はトレーニングはありません</p>
+                    <p class="text-secondary">{{today_schedule.description}}</p>
+                    <p class="text-secondary">{{today_schedule.staff_memo}}</p>
+                    <p class="text-secondary">{{today_schedule.traineer_memo}}</p>
+
+                    <div class="col-12 d-flex justify-content-center">
+                        <button type="button" class="btn btn-warning col-10">日報一覧を見る</button>
+                    </div>
+                </div>
+                {% endif %}
+            
+            </div>
+        
+        </div>
+        
+        <div class="d-flex flex-column">
+            <div class="col-12 d-flex align-items-center p-3 mt-3 text-white bg-warning rounded shadow-sm">
+                <label>Recent Update</label>
+            </div>
+            {% if dialys  %}
+            {% for dialy in dialys %}
+           
+            <!--繰り返し処理-->
+            <div class="d-flex text-muted pt-3 border-bottom col-12">
+                <div class="d-flex justify-content-between align-items-center col-12 pe-4">
+                    <div class='col-8 d-flex text-mute'>
+                        <img src='/media/{{user.profile.user_image}}' class="rounded-circle bg-warning mb-3 border border-white border-3 me-3" width="40" height="40"/>
+                        <p class="pb-3 mb-0 small lh-sm d-flex flex-column" >
+                            <strong>{{dialy.date}}</strong>
+                            {{dialy.comment}}
+                        </p>
+                    </div>
+                    <div class="col-2 text-center justify-content-center align-items-center fw-bold">
+                        <a href="/dashboard/user/dialy/detail/{{dialy.schedule_id}}" style="text-decoration:none;color:lightskyblue">日報を見る</a>
+                    </div>
+
+                </div>
+                
+            </div>
+            <!--繰り返し処理-->
+            {% endfor %}
+            {% else %}
+            <div class="p-3 d-flex justify-content-center align-items-center flex-column bt-white rounded border border-3">
+                <p>過去１週間分の日報が登録されていません。</p>
+                <p>急いで書きましょう！</p>
+                <button type="button" class="btn btn-success" onclick="location.href ='/dashboard/user/dialy/'">日報一覧</button>
+            </div>
+            {% endif %}
+            
+        </div>
+    </div>
+
+    <div class="col-3 p-4">
+        <div class="row gx-1 d-flex justify-content-center flex-column mb-5">
+            <div class="card card-raised col p-2 bg-secondary text-white">
+                <h4 class="p-2">Profile</h4>
+            </div>
+            <div class="d-flex justify-content-center align-items-center flex-column p-3 mt-1 rounded-3" style="background-color:gainsboro">
+
+                <img src='/media/{{user.profile.user_image}}' class="rounded-circle bg-warning mb-3 border border-white border-3" width="100" height="100"/>
+                <div class="bg-white rounded col-12 d-flex justify-content-start p-3 flex-column mb-4">
+                    <label class="mb-4 col-12 text-center bg-warning text-white rounded-pill">Informaiton</label>
+                    <p><i class="bi bi-person-fill"></i>  {{user}}</p>
+                    <p><i class="bi bi-envelope-fill"></i>  {{user.email}}</p>
+                    <p><i class="bi bi-people-fill "></i>  {{user.user_group.group}}</p>
+
+                </div>
+                <button type="button" class="btn btn-success" onclick="location.href='/dashboard/user/profile'">My Profile</button>
+
+            </div>
+        </div>
+        <!--
+        <div class="row d-flex justify-content-center">
+            <div class="col-12">
+                <div class="card card-raised bg-primary text-white">
+                    <div class="card-body px-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="me-2">
+                                <div class="display-5 text-black">100</div>
+                                <div class="card-text">日報未記入</div>
+                            </div>
+                            <div class="icon-circle bg-white-50 text-primary">
+                                <i class="material-icons"></i>
+                           
+                            </div>
+                        </div>
+                        <div class="card-text">
+                            <div class="d-inline-flex align-items-center">
+                                <div class="caption fw-500 me-2">3%</div>
+                                <div class="caption">from last month</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+    </div>
+</div>
+{% endblock %}

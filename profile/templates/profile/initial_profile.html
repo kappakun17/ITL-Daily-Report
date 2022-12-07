@@ -1,0 +1,68 @@
+﻿{% load widget_tweaks %}
+{% load static %}
+
+
+
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>ITL生のプロフィール入力画面</title>
+    <link rel="stylesheet" href={% static 'css/pinput.css'%}>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="pb-1" style="background-color:#FFE127">
+    <!-- プロフィール入力タイトル -->
+    <div class="MIDASHI">
+        <h1 class="pt-4">PROFILE<br>INPUT</h1>
+   
+
+    <!--アイコンや画像を選ぼう-->
+    <div class="icon_ERABU">
+        <form action="" method="POST" enctype="multipart/form-data">
+        
+        </form>
+    </div>
+   
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!---
+        <input name="Things to consider&Disability" type="text" class="feedback-input" placeholder="障害と配慮事項のお願い" />
+        
+        <input name="hobby" type="text" class="feedback-input" placeholder="趣味" />
+        <textarea name="introduction" class="feedback-input" placeholder="自己紹介"></textarea>
+
+        <div>
+            <p>
+                <input type="file" name="user_image" accept="image/*">
+            </p>
+        </div>
+        --> 
+
+        {{form.hobby | add_class:"feedback-input" | attr:"placeholder:趣味" }}
+        {{form.introduction | add_class:"feedback-input" | attr:"placeholder:自己紹介" }}
+        <div class="feedback-input">
+            <div class="d-flex justify-content-center align-items-center flex-column">
+            <label class="col-12 text-start" style="color:#757575">プロフィール画像の登録</label>
+
+                <img src='{% static 'image/user.png'%}' class="rounded-circle bg-warning mb-3 border border-white border-4" width="100" height="100"/>
+                <p class="h6 bg-warning pt-2 pb-1 px-4 rounded-pill">デフォルト</p>
+                <button class="btn btn-secondary col-12 " type="button" data-bs-toggle="collapse" data-bs-target="#disInputFile" aria-expanded="false" aria-controls="disInputFile">
+                デフォルトを変更する場合、クリックしてください。
+                </button>
+            </div>
+            <div id="disInputFile" class="collapse pt-3">
+            {{form.user_image　| add_class:"feedback-input"}}
+            </div>
+        </div>
+        
+
+
+        <input type="submit" value="Continue" />
+    
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
